@@ -7,7 +7,7 @@ const Signup = () => {
   const navigate = useNavigate();
   const onSubmit = (data) => {
     axios
-      .post("http://localhost:3001/api/auth/register/", data, {
+      .post("https://localhost:3001/api/auth/register/", data, {
         headers: {
           apisecret: process.env.REACT_APP_APISECRET,
         },

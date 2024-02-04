@@ -42,7 +42,7 @@ const AddProduct = () => {
 
       // axios post request to add product and add token to the header
       const response = await axios.post(
-        "http://localhost:3001/api/product/add/",
+        "https://localhost:3001/api/product/add/",
         apiData,
         {
           headers: {

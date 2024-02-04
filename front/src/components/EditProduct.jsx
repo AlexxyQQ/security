@@ -4,7 +4,7 @@ import EditProductList from "./EditProductList";
 
 const EditProduct = ({ user }) => {
   const { data, isloading, error } = useFetch(
-    "http://localhost:3001/api/product"
+    "https://localhost:3001/api/product"
   );
 
   if (isloading) {

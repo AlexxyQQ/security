@@ -14,7 +14,7 @@ const EditProductPage = () => {
     const fetchProduct = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3001/api/product/${id}`,
+          `https://localhost:3001/api/product/${id}`,
           {
             headers: {
               apisecret: process.env.REACT_APP_APISECRET,
@@ -83,7 +83,7 @@ const EditProductPage = () => {
 
       // axios post request to add product and add token to the header
       const response = await axios.put(
-        `http://localhost:3001/api/product/edit/${id}`,
+        `https://localhost:3001/api/product/edit/${id}`,
         apiData,
         {
           headers: {

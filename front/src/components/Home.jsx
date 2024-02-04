@@ -16,7 +16,7 @@ const Home = () => {
   const [itemsPerPage] = useState(12);
 
   const { data, isloading, error } = useFetch(
-    "http://localhost:3001/api/product/"
+    "https://localhost:3001/api/product/"
   );
 
   const [currentItems, setCurrentItems] = useState([]);
@@ -25,7 +25,10 @@ const Home = () => {
     if (data) {
       const indexOfLastItem = currentPage * itemsPerPage;
       const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-      setCurrentItems(data.message.slice(indexOfFirstItem, indexOfLastItem));
+      if (indexOfFirstItem > data.message.length) {
+        setCurrentPage(1);
+      }
+      setCurrentItems(data?.message.slice(indexOfFirstItem, indexOfLastItem));
     }
   }, [data, currentPage, itemsPerPage]);
 
@@ -40,7 +43,7 @@ const Home = () => {
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <div>Error: An error occured</div>;
   }
 
   return (
@@ -96,19 +99,19 @@ const Home = () => {
                       </button>
                     ))}
                     {currentPage ===
-                    Math.ceil(data.message.length / itemsPerPage) ? null : (
+                    Math.ceil(data?.message.length / itemsPerPage) ? null : (
                       <button
                         onClick={() =>
                           setCurrentPage((old) =>
                             Math.min(
                               old + 1,
-                              Math.ceil(data.message.length / itemsPerPage)
+                              Math.ceil(data?.message.length / itemsPerPage)
                             )
                           )
                         }
                         disabled={
                           currentPage ===
-                          Math.ceil(data.message.length / itemsPerPage)
+                          Math.ceil(data?.message.length / itemsPerPage)
                         }
                       >
                         {"Next >"}

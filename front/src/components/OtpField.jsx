@@ -11,7 +11,7 @@ const OtpField = () => {
     const apiData = { ...data, email: email };
 
     axios
-      .post("http://localhost:3001/api/auth/validate-otp", apiData, {
+      .post("https://localhost:3001/api/auth/validate-otp", apiData, {
         headers: {
           apisecret: process.env.REACT_APP_APISECRET,
         },
@@ -34,7 +34,7 @@ const OtpField = () => {
   const resendOtp = () => {
     axios
       .post(
-        "http://localhost:3001/api/auth/resend-otp",
+        "https://localhost:3001/api/auth/resend-otp",
         { email: email },
         {
           headers: {

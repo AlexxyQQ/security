@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import useFetch from "../hooks/useFetch";
 
 const SearchBar = ({ setSearchedProducts, setIsSearching }) => {
-  const { data } = useFetch("http://localhost:3001/api/product/");
+  const { data } = useFetch("https://localhost:3001/api/product/");
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {

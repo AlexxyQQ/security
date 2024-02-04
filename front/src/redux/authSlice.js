@@ -8,7 +8,7 @@ export const verifyTokenToGetUser = createAsyncThunk(
     try {
       const token = localStorage.getItem("token");
       const response = await axios.get(
-        "http://localhost:3001/api/auth/verify",
+        "https://localhost:3001/api/auth/verify",
         {
           headers: {
             Authorization: `Bearer ${token}`,

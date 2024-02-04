@@ -10,7 +10,7 @@ const ProductDetail = () => {
   const { id } = useParams();
 
   const { data, isloading, error } = useFetch(
-    `http://localhost:3001/api/product/${id}/`
+    `https://localhost:3001/api/product/${id}/`
   );
 
   const [selectedThumbnail, setSelectedThumbnail] = useState(0);

@@ -13,7 +13,7 @@ const Dashboard = () => {
   const deleteUser = () => {
     axios
       .post(
-        "http://localhost:3001/api/auth/delete-user/",
+        "https://localhost:3001/api/auth/delete-user/",
         { user: user },
         {
           headers: {

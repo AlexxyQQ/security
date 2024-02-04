@@ -8,7 +8,7 @@ const FilterProduct = ({ filter }) => {
   const [itemsPerPage] = useState(12);
 
   const { data, isloading, error } = useFetch(
-    "http://localhost:3001/api/product/"
+    "https://localhost:3001/api/product/"
   );
 
   const [currentItems, setCurrentItems] = useState([]);

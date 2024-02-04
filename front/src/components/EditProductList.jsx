@@ -8,7 +8,7 @@ const EditProductList = ({ items }) => {
   const onDelete = (id) => {
     return () => {
       axios
-        .delete(`http://localhost:3001/api/product/delete/${id}`, {
+        .delete(`https://localhost:3001/api/product/delete/${id}`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
             apisecret: process.env.REACT_APP_APISECRET,
